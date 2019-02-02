@@ -6,11 +6,11 @@ class Display extends React.Component {
       <div>
         <div className="balls">
           <h1>{this.props.balls}</h1>
-          <h1>Balls</h1>
+          <h1 data-testid="balls">Balls</h1>
         </div>
         <div className="strikes">
           <h1>{this.props.strikes}</h1>
-          <h1>Strikes</h1>
+          <h1 data-testid="strikes">Strikes</h1>
         </div>
       </div>
     );
