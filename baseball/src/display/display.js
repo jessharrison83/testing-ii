@@ -12,6 +12,10 @@ class Display extends React.Component {
           <h1 data-testid="strikes-count">{this.props.strikes}</h1>
           <h1 data-testid="strikes">Strikes</h1>
         </div>
+        <div className="fouls">
+          <h1 data-testid="fouls-count">{this.props.fouls}</h1>
+          <h1 data-testid="fouls">Fouls</h1>
+        </div>
       </div>
     );
   }

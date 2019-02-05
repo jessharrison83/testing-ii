@@ -8,13 +8,15 @@ class App extends Component {
     super();
     this.state = {
       balls: 0,
-      strikes: 0
+      strikes: 0,
+      fouls: 0
     };
   }
   reset = () => {
     this.setState({
       balls: 0,
-      strikes: 0
+      strikes: 0,
+      fouls: 0
     });
   };
   increaseBalls = () => {
@@ -25,6 +27,17 @@ class App extends Component {
       });
     } else {
       window.alert("WALK!");
+      this.reset();
+    }
+  };
+  increaseFouls = () => {
+    const fouls = this.state.fouls;
+    if (fouls < 2) {
+      this.setState({
+        fouls: fouls + 1
+      });
+    } else {
+      window.alert("YOU'RE OUT!");
       this.reset();
     }
   };
@@ -46,12 +59,17 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Display strikes={this.state.strikes} balls={this.state.balls} />
+        <Display
+          strikes={this.state.strikes}
+          balls={this.state.balls}
+          fouls={this.state.fouls}
+        />
         <Dashboard
           increaseStrikes={this.increaseStrikes}
           reset={this.reset}
           increaseBalls={this.increaseBalls}
           hit={this.hit}
+          increaseFouls={this.increaseFouls}
         />
       </div>
     );

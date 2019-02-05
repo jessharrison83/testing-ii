@@ -10,7 +10,7 @@ class Dashboard extends React.Component {
         <div onClick={this.props.increaseBalls} data-testid="ball-button">
           Ball
         </div>
-        <div onClick={this.props.increaseStrikes} data-testid="foul-button">
+        <div onClick={this.props.increaseFouls} data-testid="foul-button">
           Foul
         </div>
         <div onClick={this.props.hit} data-testid="hit-button">
